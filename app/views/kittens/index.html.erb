@@ -1,0 +1,9 @@
+<%= link_to "Create New Kitten", new_kitten_path %>
+<ul>
+<% for kitten in @kittens %>
+  <li>
+    <%= link_to kitten.name, kitten %><br>
+    <%= link_to "Delete Kitten", kitten_path(kitten), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+  </li>
+<% end %>
+</ul>
